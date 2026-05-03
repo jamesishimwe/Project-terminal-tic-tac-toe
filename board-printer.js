@@ -18,6 +18,9 @@
 export function printBoard(board) {
   for (let i = 0; i < board.length; i++) {
     console.log(board[i].join("  |  "));
+    if (i < board.length - 1) {
+      console.log("=================");
+    }
   }
 }
 
