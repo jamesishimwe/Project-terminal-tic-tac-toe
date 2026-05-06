@@ -16,8 +16,26 @@
         ];
 */
 function validateMove(move, board) {
-    // Implement this at the end if you have time, otherwise you can help your teammates!
-    return true;
+  let moveArr = move.split(",");
+  if (moveArr.length !== 2) {
+    console.log("Try again... Length of move should be 2");
+    return false;
+  }
+  let row = parseInt(moveArr[0]);
+  let col = parseInt(moveArr[1]);
+  if (isNaN(row) || isNaN(col)) {
+    console.log("Try again... Move should be numbers");
+    return false;
+  }
+  if (row < 1 || row > 3 || col < 1 || col > 3) {
+    console.log("Try again... Move should be between 1 and 3");
+    return false;
+  }
+  if (board[row - 1][col - 1] !== "_") {
+    console.log("Try again... Space is already occupied");
+    return false;
+  }
+  return true;
 }
 
 /*
@@ -32,5 +50,33 @@ function validateMove(move, board) {
             - Return true
 */
 export function makeMove(board, move, player) {
+  let moveArr = move.split(",");
+  if (!validateMove(move, board)) {
     return false;
+  }
+  if (player === 1) {
+    for (let i = 1; i <= 3; i++) {
+      for (let j = 1; j <= 3; j++) {
+        if (i === parseInt(moveArr[0]) && j === parseInt(moveArr[1])) {
+          let a = i - 1;
+          let b = j - 1;
+          console.log("Player 1 move");
+          board[a][b] = "X";
+          return board;
+        }
+      }
+    }
+  } else if (player === 2) {
+    for (let i = 1; i <= 3; i++) {
+      for (let j = 1; j <= 3; j++) {
+        if (i === parseInt(moveArr[0]) && j === parseInt(moveArr[1])) {
+          let a = i - 1;
+          let b = j - 1;
+          console.log("Player 2 move");
+          board[a][b] = "O";
+          return board;
+        }
+      }
+    }
+  }
 }
