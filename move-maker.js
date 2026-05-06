@@ -32,7 +32,7 @@ function validateMove(move, board) {
             - Return true
 */
 export function makeMove(board, move, player) {
-  
+  let moveArr = move.split(",");
     if(player === 1)
     {
         for (let i = 1; i <=3; i++){
