@@ -35,8 +35,18 @@ export function makeMove(board, move, player) {
   
     if(player === 1)
     {
+        for (let i = 1; i <=3; i++){
+            for (let j = 1; j <=3; j++)
+            {
+            }
+        }
     }
      else if(player === 2){
+        for (let i = 1; i <=3; i++){
+            for (let j = 1; j <=3; j++)
+            {
+            }
+        }
      }
 }
 
