@@ -35,6 +35,7 @@ function validateMove(move, board) {
         console.log("Try again... Space is already occupied");
         return false;
     }
+    return true;
 
 }
 
